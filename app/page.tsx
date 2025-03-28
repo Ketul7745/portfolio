@@ -268,12 +268,16 @@ export default function Home() {
               </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
-              <Linkedin className="h-4 w-4" />
-              <span className="sr-only">LinkedIn</span>
+              <Link href="https://www.linkedin.com/in/ketul-sagar/" target="_blank">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </Link>
             </Button>
             <Button variant="outline" size="icon" asChild>
-              <Mail className="h-4 w-4" />
-              <span className="sr-only">Email</span>
+              <Link href="mailto:ketulnsagar61004@gmail.com">
+                <Mail className="h-4 w-4" />
+                <span className="sr-only">Email</span>
+              </Link>
             </Button>
           </div>
         </div>

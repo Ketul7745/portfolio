@@ -32,6 +32,7 @@ export default function Home() {
             <Button variant="outline" size="icon">
               <Instagram className="h-4 w-4" />
               <span className="sr-only">Instagram</span>
+              </Button>
             <Button variant="outline" size="icon">
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>

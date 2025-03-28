@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail, FileText, ArrowRight } from "lucide-react"
+// Import Instagram icon at the top
+import { Instagram, Linkedin, Mail, FileText, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -56,19 +57,32 @@ export default function Home() {
               IIT Kharagpur undergrad with interest in machine learning, data analytics, and AI-driven solutions.
             </p>
             <div className="flex gap-4">
-              <Button>
-                View Projects
-                <ArrowRight className="ml-2 h-4 w-4" />
+              // In the hero section
+              <Button asChild>
+                <Link href="#projects">
+                  View Projects
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
-              <Button variant="outline">
-                <FileText className="mr-2 h-4 w-4" />
-                Download CV
+              
+              // In the ProjectCard component
+              <Button variant="outline" size="sm" asChild>
+                <Link href="https://github.com/your-username/project-repo" target="_blank">
+                  View Project
+                  <ArrowRight className="ml-2 h-3 w-3" />
+                </Link>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/Ketul_Sagar_Resume.pdf" target="_blank">
+                  <FileText className="mr-2 h-4 w-4" />
+                  Download CV
+                </Link>
               </Button>
             </div>
           </div>
           <div className="flex-1 flex justify-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/20">
-              <img src="/placeholder.svg?height=256&width=256" alt="Profile" className="object-cover w-full h-full" />
+              <img src="/profile.jpg" alt="Profile" className="object-cover w-full h-full" />
             </div>
           </div>
         </section>
@@ -155,13 +169,13 @@ export default function Home() {
               title="Credit card fraud detector"
               description="Engineered a robust credit fraud detection model by addressing imbalanced datasets with SMOTE, detecting fraud cases with an 98% accuracy."
               technologies={["Python", "Sci-kit learn", "Keras", "Imbalanced Dataset"]}
-              image="/placeholder.svg?height=200&width=400"
+              image="/projects/fraud-detection.jpg"
             />
             <ProjectCard
               title="AI-Powered Research paper summarizer Chatbot"
               description="Developed a chatbot that summarizes research papers and answers queries using LLM  and implemented document embeddings and retrieval using LlamaIndex"
               technologies={["Langchanin", "Fast API", "Python", "Flask", "AWS"]}
-              image="/placeholder.svg?height=200&width=400"
+              image="/projects/chatbot.jpg"
             />
             <ProjectCard
               title="Computer Vision for Pneumonia Detection "
@@ -178,7 +192,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experience Section */}
 
         {/* Contact Section */}
         <section id="contact" className="py-12 border-t">
@@ -257,9 +270,17 @@ export default function Home() {
             <p className="text-sm text-muted-foreground">© 2024 Ketul Sagar. All rights reserved.</p>
           </div>
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon">
-              <Github className="h-4 w-4" />
-              <span className="sr-only">GitHub</span>
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="https://www.instagram.com/your_username" target="_blank">
+                <Instagram className="h-4 w-4" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="https://www.instagram.com/your_username" target="_blank">
+                <Instagram className="h-4 w-4" />
+                <span className="sr-only">Instagram</span>
+              </Link>
             </Button>
             <Button variant="ghost" size="icon">
               <Linkedin className="h-4 w-4" />

@@ -1,6 +1,6 @@
 import Link from "next/link"
 // Import Instagram icon at the top
-import { Instagram, Linkedin, Mail, FileText, ArrowRight } from "lucide-react"
+import { Instagram, Linkedin, Mail, FileText, ArrowRight, Github } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -57,19 +57,10 @@ export default function Home() {
               IIT Kharagpur undergrad with interest in machine learning, data analytics, and AI-driven solutions.
             </p>
             <div className="flex gap-4">
-              // In the hero section
               <Button asChild>
                 <Link href="#projects">
                   View Projects
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              
-              // In the ProjectCard component
-              <Button variant="outline" size="sm" asChild>
-                <Link href="https://github.com/your-username/project-repo" target="_blank">
-                  View Project
-                  <ArrowRight className="ml-2 h-3 w-3" />
                 </Link>
               </Button>
               <Button variant="outline" asChild>
@@ -170,24 +161,28 @@ export default function Home() {
               description="Engineered a robust credit fraud detection model by addressing imbalanced datasets with SMOTE, detecting fraud cases with an 98% accuracy."
               technologies={["Python", "Sci-kit learn", "Keras", "Imbalanced Dataset"]}
               image="/projects/fraud-detection.jpg"
+              link="https://colab.research.google.com/drive/1xVHkQWBMa3QYms_EaZamOCQzVKWltlt4?usp=sharing"
             />
             <ProjectCard
               title="AI-Powered Research paper summarizer Chatbot"
               description="Developed a chatbot that summarizes research papers and answers queries using LLM  and implemented document embeddings and retrieval using LlamaIndex"
-              technologies={["Langchanin", "Fast API", "Python", "Flask", "AWS"]}
+              technologies={["Langchain", "Fast API", "Python", "Flask", "AWS"]}
               image="/projects/chatbot.jpg"
+              link="https://github.com/your-username/fraud-detection"
             />
             <ProjectCard
               title="Computer Vision for Pneumonia Detection "
               description="Implemented a computer vision solution to analyze X-Ray scans of patients to achieve 92.6% accuracy, 0.96 recall score."
               technologies={["OpenCV", "Tensor-Flow", "Keras", "Heatmap Analysis"]}
               image="/placeholder.svg?height=200&width=400"
+              link="https://github.com/your-username/fraud-detection"
             />
             <ProjectCard
               title="Walmart M5 Time Series Forecasting"
               description="Developed a LightGBM regressor model to forecast daily sales for the next 28 days."
               technologies={["Time Series Analysis", "Feature Engineering", "Python"]}
               image="/placeholder.svg?height=200&width=400"
+              link="https://github.com/your-username/fraud-detection"
             />
           </div>
         </section>
@@ -205,15 +200,19 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>ketulnsagar61004@gmail.com</span>
+                  <Link href="mailto:ketulnsagar61004@gmail.com">ketulnsagar61004@gmail.com</Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <Linkedin className="h-5 w-5 text-primary" />
-                  <span>https://www.linkedin.com/in/ketul-sagar/</span>
+                  <Link href="https://www.linkedin.com/in/ketul-sagar/" target="_blank">linkedin.com/in/ketul-sagar</Link>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Instagram className="h-5 w-5 text-primary" />
+                  <Link href="https://www.instagram.com/your_username" target="_blank">@your_username</Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <Github className="h-5 w-5 text-primary" />
-                  <span>github.com/rahulsharma</span>
+                  <Link href="https://github.com/your-username" target="_blank">github.com/your-username</Link>
                 </div>
               </div>
             </div>
@@ -269,26 +268,24 @@ export default function Home() {
           <div className="mb-4 md:mb-0">
             <p className="text-sm text-muted-foreground">© 2024 Ketul Sagar. All rights reserved.</p>
           </div>
-          <div className="flex gap-4">
-            <Button variant="ghost" size="icon" asChild>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="icon" asChild>
               <Link href="https://www.instagram.com/your_username" target="_blank">
                 <Instagram className="h-4 w-4" />
                 <span className="sr-only">Instagram</span>
               </Link>
             </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="https://www.instagram.com/your_username" target="_blank">
-                <Instagram className="h-4 w-4" />
-                <span className="sr-only">Instagram</span>
+            <Button variant="outline" size="icon" asChild>
+              <Link href="https://www.linkedin.com/in/ketul-sagar/" target="_blank">
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
               </Link>
             </Button>
-            <Button variant="ghost" size="icon">
-              <Linkedin className="h-4 w-4" />
-              <span className="sr-only">LinkedIn</span>
-            </Button>
-            <Button variant="ghost" size="icon">
-              <Mail className="h-4 w-4" />
-              <span className="sr-only">Email</span>
+            <Button variant="outline" size="icon" asChild>
+              <Link href="mailto:ketulnsagar61004@gmail.com">
+                <Mail className="h-4 w-4" />
+                <span className="sr-only">Email</span>
+              </Link>
             </Button>
           </div>
         </div>
@@ -320,11 +317,13 @@ function ProjectCard({
   description,
   technologies,
   image,
+  link
 }: {
   title: string
   description: string
   technologies: string[]
   image: string
+  link: string
 }) {
   return (
     <Card className="overflow-hidden">
@@ -345,9 +344,11 @@ function ProjectCard({
             </Badge>
           ))}
         </div>
-        <Button variant="outline" size="sm">
-          View Project
-          <ArrowRight className="ml-2 h-3 w-3" />
+        <Button variant="outline" size="sm" asChild>
+          <Link href={link} target="_blank">
+            View Project
+            <ArrowRight className="ml-2 h-3 w-3" />
+          </Link>
         </Button>
       </CardContent>
     </Card>

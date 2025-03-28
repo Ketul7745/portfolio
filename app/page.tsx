@@ -24,18 +24,14 @@ export default function Home() {
             <Link href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
               Projects
             </Link>
-            <Link href="#experience" className="text-muted-foreground hover:text-foreground transition-colors">
-              Experience
-            </Link>
             <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
               Contact
             </Link>
           </nav>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="icon">
-              <Github className="h-4 w-4" />
-              <span className="sr-only">GitHub</span>
-            </Button>
+              <Instagram className="h-4 w-4" />
+              <span className="sr-only">Instagram</span>
             <Button variant="outline" size="icon">
               <Linkedin className="h-4 w-4" />
               <span className="sr-only">LinkedIn</span>
@@ -174,15 +170,15 @@ export default function Home() {
               title="Computer Vision for Pneumonia Detection "
               description="Implemented a computer vision solution to analyze X-Ray scans of patients to achieve 92.6% accuracy, 0.96 recall score."
               technologies={["OpenCV", "Tensor-Flow", "Keras", "Heatmap Analysis"]}
-              image="/placeholder.svg?height=200&width=400"
-              link="https://github.com/your-username/fraud-detection"
+              image="/projects/pneumonia-detection.jpg"
+              link="https://colab.research.google.com/drive/1ibwRlFAdB059f2juvQSlMUvlDI-tp9o7?usp=sharing"
             />
             <ProjectCard
               title="Walmart M5 Time Series Forecasting"
               description="Developed a LightGBM regressor model to forecast daily sales for the next 28 days."
               technologies={["Time Series Analysis", "Feature Engineering", "Python"]}
-              image="/placeholder.svg?height=200&width=400"
-              link="https://github.com/your-username/fraud-detection"
+              image="/projects/time-series.jpg"
+              link="https://www.kaggle.com/code/ketulsagar/time-series-forecasting-eda-fe-modelling"
             />
           </div>
         </section>
@@ -209,10 +205,6 @@ export default function Home() {
                 <div className="flex items-center gap-3">
                   <Instagram className="h-5 w-5 text-primary" />
                   <Link href="https://www.instagram.com/your_username" target="_blank">@your_username</Link>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Github className="h-5 w-5 text-primary" />
-                  <Link href="https://github.com/your-username" target="_blank">github.com/your-username</Link>
                 </div>
               </div>
             </div>

@@ -165,7 +165,7 @@ export default function Home() {
               description="Developed a chatbot that summarizes research papers and answers queries using LLM  and implemented document embeddings and retrieval using LlamaIndex"
               technologies={["Langchain", "Fast API", "Python", "Flask", "AWS"]}
               image="/projects/chatbot.jpg"
-              link="https://github.com/your-username/fraud-detection"
+              link="https://chatty-4t0fnwa7d-ketul7745s-projects.vercel.app"
             />
             <ProjectCard
               title="Computer Vision for Pneumonia Detection "
